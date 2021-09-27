@@ -7,7 +7,7 @@ class Normalizer {
 		$variants = [];
 		
 		foreach ($calls as $call) {
-			$base = $this->normalizeCallsign($call);
+			$base = $this->getCallsignRoot($call);
 			$variants[$base] ??= [ $call ];
 			
 			if (!in_array($call, $variants[$base])) {
@@ -21,7 +21,7 @@ class Normalizer {
 		return $variants;
 	}
 	
-	public function normalizeCallsign(string $call): string {
+	public function getCallsignRoot(string $call): string {
 		$parts = explode('/', $call);
 		
 		// CALL does not have a slash, hence does not have any secondary pre/suffixes.

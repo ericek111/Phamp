@@ -1,5 +1,4 @@
 <?php
-
 namespace Lixko\Phamp\Checker\Impl;
 
 use Lixko\Phamp\Checker\ILogChecker;
