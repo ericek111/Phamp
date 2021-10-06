@@ -1,11 +1,12 @@
 <?php
-namespace Lixko\Phamp\Log;
+namespace Lixko\Phamp\Parser\Cabrillo;
 
+use DateTime;
 use InvalidArgumentException;
 use Lixko\Phamp\Log\Qso\Line;
 use Lixko\Phamp\Log\Qso\Manager;
 
-class CabrilloLog {
+class CabrilloParser {
 	
 	protected Manager $manager;
 
@@ -31,7 +32,7 @@ class CabrilloLog {
 		
 		$qso = new Line(
 			is_numeric($parts[1]) ? (float) $parts[1] : $parts[1],
-			new \DateTime($parts[3] . 'T' . $parts[4] . 'Z'),
+			new DateTime($parts[3] . 'T' . $parts[4] . 'Z'),
 			$parts[9],
 			$parts[11] . ' ' . $parts[12],
 		);
