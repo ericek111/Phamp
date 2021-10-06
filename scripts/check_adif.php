@@ -1,9 +1,9 @@
 <?php
 $dummyPath = include __DIR__ . '/_checker_prep.php';
 
-use Lixko\Phamp\Parser\Cabrillo\CabrilloParser;
+use Lixko\Phamp\Parser\Adif\AdifParser;
 
-$parser = new CabrilloParser();
+$parser = new AdifParser();
 
 $handle = fopen($argv[2], 'r');
 if ($handle) {
